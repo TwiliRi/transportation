@@ -21,19 +21,7 @@ export const commentRouter = createTRPCRouter({
     })
     return comment
   }),
-  getCom10:publicProcedure
-    
-    .query(({ctx,input})=>{
-        return ctx.db.comments.findMany({
-            take:9, 
-            select:{
-                id:true,
-                comments:true,
-                name:true,
-                createdAt:true
-            }
-        })
-    }),
+ 
   getCom:publicProcedure
     .input(z.number())
     .query(({ctx,input})=>{

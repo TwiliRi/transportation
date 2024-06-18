@@ -24,7 +24,7 @@ export default function Home() {
 
   const router = useRouter()
   const mutation = api.comment.submitComment.useMutation()
-  const getCom = api.comment.getCom10.useQuery();
+  const getCom = api.comment.getCom.useQuery(9);
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e)=>{
     const newCom= await mutation.mutateAsync({
