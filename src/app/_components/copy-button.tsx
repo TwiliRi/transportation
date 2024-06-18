@@ -7,12 +7,14 @@ const [state, setState] = useState(false);
 
   return (<>
     <button 
-    onClick={()=>{
-        navigator.clipboard.writeText('+7 (495) 222-22-22')
-        setState(true);
-        setTimeout(() => {
-            setState(false);
-        }, 2000);
+    onClick={function(){
+    // tslint:disable-next-line:no-unsafe-any
+    navigator.clipboard.writeText('+7 (495) 222-22-22')
+    setState(true);
+    setTimeout(() => {
+        setState(false);
+    }, 2000);
+  
 }}
     className="w-full rounded-md p-2 bg-black  text-white ">
         Скопировать номер
