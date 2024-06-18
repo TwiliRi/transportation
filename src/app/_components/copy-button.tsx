@@ -9,7 +9,6 @@ const [state, setState] = useState(false);
     <button 
     onClick={()=>{
         
-            // tslint:disable-next-line:no-unsafe-any
             navigator.clipboard.writeText('+7 (495) 222-22-22')
             setState(true);
             setTimeout(() => {
