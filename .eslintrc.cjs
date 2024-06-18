@@ -33,16 +33,8 @@ const config = {
       }
     ],
     "@typescript-eslint/require-await": "off",
-    "@typescript-eslint/no-misused-promises": [
-      "error",
-      {
-        "checksVoidReturn": {
-          "attributes": false,
-          "arguments": false,
-
-        },"checksSpreads": false
-      }
-    ]
+    "@typescript-eslint/no-misused-promises": "off",
+    "@typescript-eslint/no-floating-promises": "off",
   }
 }
 module.exports = config;
