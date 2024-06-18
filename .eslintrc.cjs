@@ -10,10 +10,12 @@ const config = {
   "extends": [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended-type-checked",
+    "next/core-web-vitals",
     "plugin:@typescript-eslint/stylistic-type-checked"
   ],
   "rules": {
     "@typescript-eslint/array-type": "off",
+    "react/no-unescaped-entities": 0 ,
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/consistent-type-imports": [
       "warn",
