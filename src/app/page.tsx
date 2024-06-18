@@ -27,7 +27,6 @@ export default function Home() {
   const getCom = api.comment.getCom10.useQuery();
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e)=>{
-    e.preventDefault()
     const newCom= await mutation.mutateAsync({
       name,
       comments,
@@ -151,7 +150,7 @@ export default function Home() {
           <p className="text-2xl">Оставить отзыв</p>
         </div>
         <form method="get" onSubmit={
-          handleSubmit
+          (event)=>void handleSubmit(event)
           } className="p-5 rounded-sm mt-[30px] flex flex-col gap-5 justify-center items-center text-center">
           <label className="text-sm font-medium flex flex-col justify-center items-center text-gray-700 w-full">
             <p className="">Ваше ФИО</p>
