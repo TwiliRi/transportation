@@ -17,7 +17,7 @@ const config = {
     "@typescript-eslint/array-type": "off",
     "react/no-unescaped-entities": "off",
     "@next/next/no-page-custom-font": "off",
-    "@typescript-eslint/no-misused-promises": "off",
+    
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/consistent-type-imports": [
       "warn",
@@ -33,7 +33,16 @@ const config = {
       }
     ],
     "@typescript-eslint/require-await": "off",
-   
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": {
+          "attributes": false,
+          "arguments": false,
+
+        },"checksSpreads": false
+      }
+    ]
   }
 }
 module.exports = config;
