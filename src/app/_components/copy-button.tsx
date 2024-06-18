@@ -9,8 +9,9 @@ const [state, setState] = useState(false);
     <button 
     onClick={()=>{
         navigator.clipboard.writeText('+7 (495) 222-22-22')
-    
+    .then(() => {
         setState(true);
+    }).catch(() => 'obligatory catch')
     setTimeout(() => {
         setState(false);
     }, 2000);
