@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 
 import Link from "next/link";
 import Image from "next/image";
-import Cars from "@/public/car.png";
+import Cars from "../public/car.png";
 import { ScrollButton } from "./components/scroll-button";
 import CopyButton from "./components/copy-button";
 import React, { useState } from "react";

@@ -2,7 +2,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import {ScrollButton} from '../components/scroll-button'
-import Cars from '@/public/car2.png'
+import Cars from '../../public/car2.png'
 import CopyButton from "../components/copy-button";
 // import { CreatePost } from "~/app/_components/create-post";
 // import { getServerAuthSession } from "~/server/auth";
