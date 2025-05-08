@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,6 +24,22 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <footer>
+          
+          <div className="w-[90%] m-auto rounded-2xl h-[2px] bg-black"></div>
+          <div className="flex flex-row max-sm:flex-col gap-5 justify-between items-center  p-11">
+           
+            <nav>
+              <ul className="flex flex-row gap-8">
+                <Link href='/'><li>Главная</li></Link>
+                <Link href='/about'><li>О мне</li></Link>
+              </ul>
+            </nav>
+            <div>
+              <p className="">prod.by <b><a href="https://github.com/twiliri">@TwiliRi</a></b></p>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );
