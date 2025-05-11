@@ -35,9 +35,12 @@ export default function About() {
 
           <div className="flex flex-col items-center  justify-around w-[60%] max-sm:w-[100%] z-20 rounded-md p-3">
             <h1 className="font-bold text-4xl text-center ">О мне</h1>
+            <div className="w-[70%]  rounded-2xl h-[2px] my-8 bg-black"></div>
             <div className="">
-              <p className="text-xl my-2">Здравствуйте, меня зовут Алексей.</p>
+              <p className="text-l">Здравствуйте, меня зовут Алексей.</p>
+              
               <p className="text-l">Я профессиональный водитель с более чем 10-летним опытом работы в сфере грузоперевозок. За это время я помог сотням клиентов безопасно и своевременно доставить их грузы.</p>
+              <br/>
               <p className="text-l">Предлагаю услуги по перевозке грузов и поездки за город. Предоставляю услуги в различных городах России, специализируюсь в городе <b>Рязань</b>.</p>
               <p className="text-l">Перевозки грузов осуществляются на автомобиле марки "Газель" ГАЗ A31R23</p>
               <br/>

@@ -86,27 +86,37 @@ export default function Home() {
                 <Image
                   src={Cars}
                   alt="Газель"
-                  className="absolute top-[100px] md:left-[-600px] xl:left-[-400px] 2xl:left-[-200px]
+                  className="absolute top-[100px]  md:left-[-600px] xl:left-[-400px] 2xl:left-[-200px]
                   lg:left-[-600px] min-[750px]:left-[-650px] sm:left-[-700px] min-w-[1200px]
-                  z-20 max-sm:left-[-900px]"
+                  z-20 max-sm:left-[-900px]
+                  min-[100px]:left-[-1000px]
+                  "
                 />
               </div>
 
               <div className="flex gap-8 flex-col justify-around w-[60%] max-sm:w-[100%] z-20 h-full rounded-md p-3">
                 <h1 className="font-bold text-4xl text-center">Добро пожаловать</h1>
+                <div className="w-[70%] self-center rounded-2xl h-[2px] bg-black"></div>
                 <div>
                   <p className="">
                     Меня зовут <b>Алексей</b>, и я рад приветствовать вас на
-                    моём сайте.
+                    моём сайте. 
                   </p>
                   <p>
                     Предоставляю качественные услуги грузоперевозок в различных
                     городах России, но основная зона моей работы — город{" "}
                     <b>Рязань</b> и Рязанская область.
                   </p>
+                  <br/>
                   <p>
+                    Помогу потодобрать <b>различные типы газелей</b> — от компактных 3-метровых 
+                    до просторных 6-метровых, что позволяет подобрать оптимальный вариант под любой груз.
+                  </p>
+                  <br/>
+                
+                  <p className="text-black mix-blend-difference">
                     Чтобы наше сотрудничество было максимально комфортным,
-                    рекомендую ознакомиться с <b>ценами</b> на мои услуги ниже.
+                    рекомендую ознакомиться с <b>ценами</b> на услуги ниже.
                   </p>
                 </div>
 
@@ -135,39 +145,145 @@ export default function Home() {
         </section>
       </header>
 
+    
+
       <section className="p-5">
         <div className="flex flex-col justify-center items-center ">
-          <p className="text-xl">Цены</p>
+          <h2 className="text-xl">Цены</h2>
           <div className="w-[70%] rounded-2xl h-[2px] bg-black"></div>
-          <div className="flex mt-[60px] flex-row max-md:flex-col max-md:gap-[20px] gap-[200px] justify-center items-center">
-            <div className="w-[300px] border-2 rounded-md border-black p-7 flex flex-col justify-center items-center hover:shadow-3xl">
-              <p className="text-xl">Город</p>
-              <div className="w-[70%] rounded-2xl h-[2px] bg-black"></div>
-              <p className="mt-3">Цена договорная</p>
-              <p>От 1200 рублей/час</p>
-              <p>
-                <b>Минимум 2 часа</b>
-              </p>
-            </div>
-            <div className="w-[300px] border-2 rounded-md border-black p-7 flex flex-col justify-center items-center hover:shadow-3xl">
-              <p className="text-xl">Поездки за город</p>
-              <div className="w-[70%] rounded-2xl h-[2px] bg-black"></div>
-              <p className="mt-3">Цена договорная</p>
-              <p>от 25 рублей/км</p>
-              <p></p>
-            </div>
-          </div>
-        </div>
+          
+          {/* Таблица с ценами в стиле Statement Summary */}
+          <div className="mt-[60px] w-full max-w-[1098px]">
+            
+            <div className="overflow-x-auto border border-gray-200 rounded-lg shadow-md">
+              <style jsx>{`
+                @media (max-width: 800px) {
+                  table, thead, tbody, th, td, tr {
+                    display: block;
+                  }
+                  
+                  thead tr {
+                    position: absolute;
+                    top: -9999px;
+                    left: -9999px;
+                  }
+                  
+                  tr {
+                    margin-bottom: 10px;
+                    border-radius: 4px;
+                  }
+                  
+                  td {
+                    border: none;
+                    position: relative;
+                    padding-left: 50%;
+                    text-align: right;
+                  }
+                  
+                  td:before {
+                    position: absolute;
+                    top: 12px;
+                    left: 12px;
+                    width: 45%;
+                    padding-right: 10px;
+                    white-space: nowrap;
+                    font-weight: bold;
+                    text-align: left;
+                  }
+                  thead{
+                  background-color: #d1d5dc;
+                  }
 
-        <div className="flex flex-col justify-center items-center ">
-          <div className="w-[300px] p-6 border-2 rounded-md border-black mt-[100px] flex flex-col justify-center items-center hover:shadow-3xl  shadow-black">
-            <p className="text-xl">Дополнительные услуги</p>
-            <div className="w-[70%] rounded-2xl h-[2px] bg-black"></div>
-            <ul className="mt-3 list-disc">
-              <li>Услуги грузчика(от 500 рублей/час)</li>
-              <li>Сборка (от 1000 рублей)</li>
-            </ul>
+                  td:nth-of-type(1):before { content: "ТИП ТРАНСПОРТА"; }
+                  td:nth-of-type(1){background-color: #000; color:white }
+                  td:nth-of-type(2):before { content: "ГОРОД"; }
+                  td:nth-of-type(3):before { content: "ДО 30КМ"; }
+                  td:nth-of-type(4):before { content: "ДО 50КМ"; }
+                  td:nth-of-type(5):before { content: "ДО 70КМ"; }
+                  td:nth-of-type(6):before { content: "ДО 90КМ"; }
+                  td:nth-of-type(7):before { content: "ДО 150КМ"; }
+                  td:nth-of-type(8):before { content: "МЕЖГОРОД"; }
+                }
+              `}</style>
+              <table className="w-full text-left">
+                <thead className="bg-black  border-gray-300">
+                  <tr>
+                    <th className="py-3 px-4 font-semibold text-white">ТИП ТРАНСПОРТА</th>
+                    <th className="py-3 px-4 font-semibold text-white text-center">ГОРОД</th>
+                    <th className="py-3 px-4 font-semibold text-white text-center">ДО 30КМ</th>
+                    <th className="py-3 px-4 font-semibold text-white text-center">ДО 50КМ</th>
+                    <th className="py-3 px-4 font-semibold text-white text-center">ДО 70КМ</th>
+                    <th className="py-3 px-4 font-semibold text-white text-center">ДО 90КМ</th>
+                    <th className="py-3 px-4 font-semibold text-white text-center">ДО 150КМ</th>
+                    <th className="py-3 px-4 font-semibold text-white text-center">МЕЖГОРОД</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-300">
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 font-medium">Газель 3м. 10 куб</td>
+                    <td className="py-3 px-4 text-center ">1100</td>
+                    <td className="py-3 px-4 text-center">2200</td>
+                    <td className="py-3 px-4 text-center">3300</td>
+                    <td className="py-3 px-4 text-center">4400</td>
+                    <td className="py-3 px-4 text-center">5500</td>
+                    <td className="py-3 px-4 text-center">31</td>
+                    <td className="py-3 px-4 text-center">30</td>
+                  </tr>
+                  <tr className="hover:bg-gray-100 ">
+                    <td className="py-3 px-4 font-medium">Газель 4м. 16 куб</td>
+                    <td className="py-3 px-4 text-center ">1200</td>
+                    <td className="py-3 px-4 text-center">2400</td>
+                    <td className="py-3 px-4 text-center">3600</td>
+                    <td className="py-3 px-4 text-center">4800</td>
+                    <td className="py-3 px-4 text-center">6000</td>
+                    <td className="py-3 px-4 text-center">33</td>
+                    <td className="py-3 px-4 text-center">32</td>
+                  </tr>
+                  <tr className="hover:bg-gray-100">
+                    <td className="py-3 px-4 font-medium">Газель 5м. 24 куб</td>
+                    <td className="py-3 px-4 text-center ">1300х2</td>
+                    <td className="py-3 px-4 text-center">3900</td>
+                    <td className="py-3 px-4 text-center">5200</td>
+                    <td className="py-3 px-4 text-center">6500</td>
+                    <td className="py-3 px-4 text-center">7800</td>
+                    <td className="py-3 px-4 text-center">43</td>
+                    <td className="py-3 px-4 text-center">34</td>
+                  </tr>
+                  <tr className="hover:bg-gray-100 ">
+                    <td className="py-3 px-4 font-medium">Газель 6м. 32 куб</td>
+                    <td className="py-3 px-4 text-center ">1400х2</td>
+                    <td className="py-3 px-4 text-center">4200</td>
+                    <td className="py-3 px-4 text-center">5600</td>
+                    <td className="py-3 px-4 text-center">7000</td>
+                    <td className="py-3 px-4 text-center">8400</td>
+                    <td className="py-3 px-4 text-center">45</td>
+                    <td className="py-3 px-4 text-center">35</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            
+            
+            <div className="mt-8 bg-white border border-gray-200 rounded-lg shadow-md p-6">
+              <h3 className="text-xl font-bold mb-4">Тарифы и условия перевозки:</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li>Стоимость работы машины до 20:00, от 1100 руб. за час</li>
+                <li>Стоимость работы машины после 20:00, 1.8*дневной оплаты руб. за час</li>
+                <li>Первый час работы оплачивается полностью, далее оплата каждые 30 минут</li>
+                <li>При заказе машины за город, стоимость взимается с учётом обратной дороги</li>
+                <li>Если машина должна прибыть на загрузку за город (без заказчика) заказчик вносит предоплату</li>
+                <li>При заказе машины за город 30 минут на погрузку и выгрузку включены в ставку, далее по тарифу</li>
+                <li>Если перед поездкой за город машина будет работать и по Рязани то работа по городу оплачивается отдельно</li>
+              </ul>
+              <div className="mt-4 p-4 text-white bg-black rounded-lg">
+                <p className="font-bold">Для переездов</p>
+                <p>Предоставляем машину с грузчиками. Стоимость работы такой бригады (машина и два грузчика) от 2400 руб/час (минимальное время заказа 2 часа). Точный расчет будет произведен после уточнения характера груза.</p>
+              </div>
+            </div>
           </div>
+          
+          
         </div>
       </section>
 
@@ -181,14 +297,14 @@ export default function Home() {
                 Профессиональный водитель
               </p>
               <p>
-                Опытный водитель с большим стажем работы, знающие город и
+                Опытный водители с большим стажем работы, знающие город и
                 область
               </p>
             </div>
             <div className=" border-black rounded-md p-4 max-w-[350px] shadow-md hover:shadow-xl">
               <p className="font-bold text-lg mb-2">Надежный транспорт</p>
               <p>
-                Ухоженный автомобиль ГАЗель в отличном техническом состоянии
+                Ухоженный автомобили в отличном техническом состоянии
               </p>
             </div>
             <div className=" border-black rounded-md p-4 max-w-[350px] shadow-md hover:shadow-xl">
