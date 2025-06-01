@@ -5,7 +5,6 @@ import {ScrollButton} from '../components/scroll-button'
 import Cars from '../../public/car2.png'
 import CopyButton from "../components/copy-button";
 import React, { useState, useEffect } from "react";
-import Head from "next/head";
 
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
@@ -16,11 +15,7 @@ export default function About() {
 
   return (
     <>
-      <Head>
-        <title>О мне - Алексей | Профессиональный водитель грузоперевозок Рязань</title>
-        <meta name="description" content="Алексей - профессиональный водитель с 10+ летним опытом грузоперевозок в Рязани. Газель ГАЗ A31R23, грузоподъемность до 1.5 тонн. Надежно и быстро." />
-        <meta name="keywords" content="о водителе, Алексей грузоперевозки, опыт работы, газель рязань, профессиональный водитель" />
-      </Head>
+      
       <style jsx global>{`
         @keyframes fadeInUp {
           from {
