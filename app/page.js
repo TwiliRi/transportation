@@ -7,6 +7,7 @@ import Cars from "../public/car.png";
 import { ScrollButton } from "./components/scroll-button";
 import CopyButton from "./components/copy-button";
 import React, { useState, useEffect } from "react";
+import Head from "next/head";
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -68,6 +69,11 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Главная - Грузоперевозки Рязань 62 | Транспортные услуги</title>
+        <meta name="description" content="Профессиональные грузоперевозки в Рязани и области. Газель, фургон, грузчики. Переезды, доставка мебели. Быстро, надежно, недорого. Звоните +7 920 997-77-11" />
+        <meta name="keywords" content="грузоперевозки рязань, главная страница, транспорт рязань, доставка грузов" />
+      </Head>
       <style jsx global>{`
         @keyframes fadeInUp {
           from {
