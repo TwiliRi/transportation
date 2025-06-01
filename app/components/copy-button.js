@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function CopyButton() {
   const [state, setState] = useState(false);
-  const phoneNumber = '+7 (495) 222-22-22';
+  const phoneNumber = '+7 920 997-77-11';
 
   const copyToClipboard = async () => {
     try {
