@@ -1,4 +1,6 @@
 import { ImageResponse } from 'next/og'
+import { readFileSync } from 'fs'
+import { join } from 'path'
 
 export const alt = 'Грузоперевозки Рязань 62 - Надежные транспортные услуги'
 export const size = {
@@ -8,25 +10,121 @@ export const size = {
 export const contentType = 'image/png'
 
 export default async function Image() {
+  // Загружаем иконку грузовика
+  const truckIconPath = join(process.cwd(), 'public', 'free-icon-delivery-truck-310215.png')
+  const truckIconBuffer = readFileSync(truckIconPath)
+  const truckIconBase64 = `data:image/png;base64,${truckIconBuffer.toString('base64')}`
+
   return new ImageResponse(
     (
       <div
         style={{
-          background: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)',
+          background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
           width: '100%',
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          color: 'white',
+          color: '#000000',
           fontFamily: 'Arial, sans-serif',
+          position: 'relative',
         }}
       >
-        <div style={{ fontSize: 80, marginBottom: 20 }}>🚛</div>
-        <div style={{ fontSize: 48, fontWeight: 'bold', textAlign: 'center', marginBottom: 20 }}>Грузоперевозки Рязань 62</div>
-        <div style={{ fontSize: 24, textAlign: 'center', opacity: 0.9 }}>Надежные транспортные услуги</div>
-        <div style={{ fontSize: 20, textAlign: 'center', marginTop: 20, opacity: 0.8 }}>Газель • Фургон • Грузчики • 24/7</div>
+        {/* Иконка грузовика */}
+        <div 
+          style={{
+            position: 'absolute',
+            top: '80px',
+            left: '80px',
+            width: '120px',
+            height: '120px',
+            background: '#000000',
+            borderRadius: '20px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '20px',
+          }}
+        >
+          <img
+            src={truckIconBase64}
+            alt="Грузовик"
+            style={{
+              width: '80px',
+              height: '80px',
+              filter: 'invert(1)', // Делаем иконку белой
+            }}
+          />
+        </div>
+        
+        {/* Основной контент */}
+        <div style={{ 
+          display: 'flex', 
+          flexDirection: 'column', 
+          alignItems: 'center',
+          textAlign: 'center',
+          marginTop: '40px'
+        }}>
+          <div style={{ 
+            fontSize: 52, 
+            fontWeight: 'bold', 
+            marginBottom: 20,
+            color: '#000000'
+          }}>
+            Грузоперевозки Рязань
+          </div>
+          
+          {/* Разделительная линия */}
+          <div style={{
+            width: '300px',
+            height: '3px',
+            background: '#000000',
+            borderRadius: '2px',
+            marginBottom: '30px'
+          }}></div>
+          
+          <div style={{ 
+            fontSize: 28, 
+            marginBottom: 25,
+            color: '#374151',
+            fontWeight: '600'
+          }}>
+            Надежные транспортные услуги
+          </div>
+          
+          <div style={{ 
+            fontSize: 22, 
+            color: '#6b7280',
+            marginBottom: '30px'
+          }}>
+            Газель • Фургон • Грузчики • 24/7
+          </div>
+          
+          {/* Телефон в черном блоке */}
+          <div style={{
+            background: '#000000',
+            color: '#ffffff',
+            padding: '20px 40px',
+            borderRadius: '12px',
+            fontSize: '24px',
+            fontWeight: 'bold'
+          }}>
+            +7 920 997-77-11
+          </div>
+        </div>
+        
+        {/* Декоративные элементы */}
+        <div style={{
+          position: 'absolute',
+          bottom: '40px',
+          right: '40px',
+          fontSize: '18px',
+          color: '#9ca3af',
+          fontWeight: '500'
+        }}>
+          Алексей
+        </div>
       </div>
     ),
     {

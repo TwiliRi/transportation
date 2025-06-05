@@ -1,10 +1,11 @@
 "use client";
 import { useRouter } from "next/navigation";
+
 import Link from "next/link";
 import Image from "next/image";
 import Cars from "../../public/car.png";
-import { ScrollButton } from "./scroll-button";
-import CopyButton from "./copy-button";
+import { ScrollButton } from "../components/scroll-button";
+import CopyButton from "../components/copy-button";
 import React, { useState, useEffect } from "react";
 
 export default function HomeContent() {
@@ -264,17 +265,13 @@ export default function HomeContent() {
                   lg:left-[-600px] min-[750px]:left-[-650px] sm:left-[-700px] min-w-[1200px]
                   z-20 max-sm:left-[-900px]
                   min-[100px]:left-[-1000px] transition-all duration-1000 hover:scale-105
-                  ${
-                    isVisible ? 'animate-slideInFromLeft' : 'opacity-0'
-                  }
+                  ${isVisible ? 'animate-slideInFromLeft' : 'opacity-0'}
                   `}
                 />
               </div>
 
-              <div className={`flex gap-8 flex-col justify-around w-[60%] max-sm:w-[100%] z-20 h-full rounded-md p-3 ${
-                isVisible ? 'animate-fadeInRight delay-200' : 'opacity-0'
-              }`}>
-                <h1 className="font-bold text-4xl text-center transition-all duration-500 hover:text-gray-800 hover:scale-105">Добро пожаловать</h1>
+              <div className={`flex gap-8 flex-col justify-around w-[60%] max-sm:w-[100%] z-20 h-full rounded-md p-3 ${isVisible ? 'animate-fadeInRight delay-200' : 'opacity-0'}`}>
+                <h1 className="font-bold text-4xl text-center transition-all duration-500 hover:text-gray-800 hover:scale-105">Грузоперевозки Рязань</h1>
                 <div className="w-[70%] self-center rounded-2xl h-[2px] bg-black transition-all duration-500 hover:bg-gray-800 hover:h-[4px]"></div>
                 <div className="space-y-4">
                   <p className="transition-all duration-300 hover:translate-x-2">
@@ -326,19 +323,17 @@ export default function HomeContent() {
         </section>
       </header>
 
+    
+
       <section className="p-5">
-        <div className={`flex flex-col justify-center items-center ${
-          isVisible ? 'animate-fadeInUp delay-400' : 'opacity-0'
-        }`}>
+        <div className={`flex flex-col justify-center items-center ${isVisible ? 'animate-fadeInUp delay-400' : 'opacity-0'}`}>
           <h2 className="text-xl transition-all duration-500 hover:text-gray-800 hover:scale-110">Цены</h2>
           <div className="w-[70%] rounded-2xl h-[2px] bg-black transition-all duration-500 hover:bg-gray-800 hover:h-[4px]"></div>
           
           {/* Таблица с ценами в стиле Statement Summary */}
           <div className="mt-[60px] w-full max-w-[1098px]">
             
-            <div className={`responsive-table  border overflow-x-hidden border-gray-200 rounded-lg shadow-md transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] ${
-              isVisible ? 'animate-fadeInUp delay-500' : 'opacity-0'
-            }`}>
+            <div className={`responsive-table  border overflow-x-hidden border-gray-200 rounded-lg shadow-md transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] ${isVisible ? 'animate-fadeInUp delay-500' : 'opacity-0'}`}>
               <table className="w-full text-left">
                 <thead className="bg-black  border-gray-300">
                   <tr>
@@ -352,86 +347,144 @@ export default function HomeContent() {
                     <th className="py-3 px-4 font-semibold text-white text-center transition-all duration-300 hover:bg-gray-800">МЕЖГОРОД</th>
                   </tr>
                 </thead>
-                <tbody className="bg-white">
-                  <tr className="border-b border-gray-200 hover:bg-gray-50 transition-all duration-300">
-                    <td className="py-3 px-4 font-medium bg-black text-white transition-all duration-300 hover:bg-gray-800">Газель 3м</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">1000₽</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">1500₽</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">2000₽</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">2500₽</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">3000₽</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">4000₽</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">25₽/км</td>
+                <tbody className="divide-y divide-gray-300">
+                  <tr className="hover:bg-blue-50 transition-all duration-300 hover:scale-[1.02] hover:shadow-md">
+                    <td className="py-3 px-4 font-medium transition-all duration-300 hover:text-gray-800">Газель 3м. 10 куб</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">1100</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">2200</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">3300</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">4400</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">5500</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">31</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">30</td>
                   </tr>
-                  <tr className="border-b border-gray-200 hover:bg-gray-50 transition-all duration-300">
-                    <td className="py-3 px-4 font-medium bg-black text-white transition-all duration-300 hover:bg-gray-800">Газель 4м</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">1200₽</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">1700₽</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">2200₽</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">2700₽</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">3200₽</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">4200₽</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">27₽/км</td>
+                  <tr className="hover:bg-blue-50 transition-all duration-300 hover:scale-[1.02] hover:shadow-md">
+                    <td className="py-3 px-4 font-medium transition-all duration-300 hover:text-gray-800">Газель 4м. 16 куб</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">1200</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">2400</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">3600</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">4800</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">6000</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">33</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">32</td>
                   </tr>
-                  <tr className="border-b border-gray-200 hover:bg-gray-50 transition-all duration-300">
-                    <td className="py-3 px-4 font-medium bg-black text-white transition-all duration-300 hover:bg-gray-800">Газель 6м</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">1500₽</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">2000₽</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">2500₽</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">3000₽</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">3500₽</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">4500₽</td>
-                    <td className="py-3 px-4 text-center transition-all duration-300 hover:bg-gray-100">30₽/км</td>
+                  <tr className="hover:bg-blue-50 transition-all duration-300 hover:scale-[1.02] hover:shadow-md">
+                    <td className="py-3 px-4 font-medium transition-all duration-300 hover:text-gray-800">Газель 5м. 24 куб</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">1300х2</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">3900</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">5200</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">6500</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">7800</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">43</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">34</td>
+                  </tr>
+                  <tr className="hover:bg-blue-50 transition-all duration-300 hover:scale-[1.02] hover:shadow-md">
+                    <td className="py-3 px-4 font-medium transition-all duration-300 hover:text-gray-800">Газель 6м. 32 куб</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">1400х2</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">4200</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">5600</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">7000</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">8400</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">45</td>
+                    <td className="py-3 px-4 text-center transition-all duration-300 hover:text-gray-800 hover:font-bold">35</td>
                   </tr>
                 </tbody>
               </table>
+            </div>
+            
+            
+            
+            <div className={`mt-8 bg-white border border-gray-200 rounded-lg shadow-md p-6 transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] ${isVisible ? 'animate-fadeInUp delay-600' : 'opacity-0'}`}>
+              <h3 className="text-xl font-bold mb-4 transition-all duration-300 hover:text-gray-800">Тарифы и условия перевозки:</h3>
+              <ul className="list-disc pl-5 space-y-2">
+                <li className="transition-all duration-300 hover:translate-x-2 hover:text-gray-800">Стоимость работы машины до 20:00, от 1100 руб. за час</li>
+                <li className="transition-all duration-300 hover:translate-x-2 hover:text-gray-800">Стоимость работы машины после 20:00, 1.8*дневной оплаты руб. за час</li>
+                <li className="transition-all duration-300 hover:translate-x-2 hover:text-gray-800">Первый час работы оплачивается полностью, далее оплата каждые 30 минут</li>
+                <li className="transition-all duration-300 hover:translate-x-2 hover:text-gray-800">При заказе машины за город, стоимость взимается с учётом обратной дороги</li>
+                <li className="transition-all duration-300 hover:translate-x-2 hover:text-gray-800">Если машина должна прибыть на загрузку за город (без заказчика) заказчик вносит предоплату</li>
+                <li className="transition-all duration-300 hover:translate-x-2 hover:text-gray-800">При заказе машины за город 30 минут на погрузку и выгрузку включены в ставку, далее по тарифу</li>
+                <li className="transition-all duration-300 hover:translate-x-2 hover:text-gray-800">Если перед поездкой за город машина будет работать и по Рязани то работа по городу оплачивается отдельно</li>
+              </ul>
+              <div className="mt-4 p-4 text-white bg-black rounded-lg transition-all duration-500 hover:bg-gray-800 hover:scale-105">
+                <p className="font-bold">Для переездов</p>
+                <p>Предоставляем машину с грузчиками. Стоимость работы такой бригады (машина и два грузчика) от 2400 руб/час (минимальное время заказа 2 часа). Точный расчет будет произведен после уточнения характера груза.</p>
+              </div>
+            </div>
+          </div>
+          
+          
+        </div>
+      </section>
+
+      <section className="p-5">
+        <div className={`flex flex-col justify-center items-center mt-[50px] ${isVisible ? 'animate-fadeInUp delay-700' : 'opacity-0'}`}>
+          <p className="text-xl transition-all duration-500 hover:text-gray-800 hover:scale-110">Наши преимущества</p>
+          <div className="w-[70%] rounded-2xl h-[2px] bg-black transition-all duration-500 hover:bg-gray-800 hover:h-[4px]"></div>
+          <div className="grid xl:grid-cols-3 list-disc min-[850px]:grid-cols-2 max-sm:grid-cols-1 gap-6 mt-[30px]">
+            <div className={`border-black rounded-md p-4 max-w-[350px] shadow-md hover:shadow-xl transition-all duration-500 hover:scale-105 hover:bg-blue-50 hover:border-blue-500 ${isVisible ? 'animate-fadeInUp delay-100' : 'opacity-0'}`}>
+              <p className="font-bold text-lg mb-2 transition-all duration-300 hover:text-gray-800">
+                Профессиональный водитель
+              </p>
+              <p className="transition-all duration-300 hover:text-gray-700">
+                Опытный водители с большим стажем работы, знающие город и
+                область
+              </p>
+            </div>
+            <div className={`border-black rounded-md p-4 max-w-[350px] shadow-md hover:shadow-xl transition-all duration-500 hover:scale-105 hover:bg-blue-50 hover:border-blue-500 ${isVisible ? 'animate-fadeInUp delay-200' : 'opacity-0'}`}>
+              <p className="font-bold text-lg mb-2 transition-all duration-300 hover:text-gray-800">Надежный транспорт</p>
+              <p className="transition-all duration-300 hover:text-gray-700">
+                Ухоженный автомобили в отличном техническом состоянии
+              </p>
+            </div>
+            <div className={`border-black rounded-md p-4 max-w-[350px] shadow-md hover:shadow-xl transition-all duration-500 hover:scale-105 hover:bg-blue-50 hover:border-blue-500 ${isVisible ? 'animate-fadeInUp delay-300' : 'opacity-0'}`}>
+              <p className="font-bold text-lg mb-2 transition-all duration-300 hover:text-gray-800">Доступные цены</p>
+              <p className="transition-all duration-300 hover:text-gray-700">Прозрачная система расчета без скрытых платежей</p>
+            </div>
+            <div className={`border-black rounded-md p-4 max-w-[350px] shadow-md hover:shadow-xl transition-all duration-500 hover:scale-105 hover:bg-blue-50 hover:border-blue-500 ${isVisible ? 'animate-fadeInUp delay-400' : 'opacity-0'}`}>
+              <p className="font-bold text-lg mb-2 transition-all duration-300 hover:text-gray-800">Оперативность</p>
+              <p className="transition-all duration-300 hover:text-gray-700">Быстрая обработка заказов и гибкий график работы</p>
+            </div>
+            <div className={`border-black rounded-md p-4 max-w-[350px] shadow-md hover:shadow-xl transition-all duration-500 hover:scale-105 hover:bg-blue-50 hover:border-blue-500 ${isVisible ? 'animate-fadeInUp delay-500' : 'opacity-0'}`}>
+              <p className="font-bold text-lg mb-2 transition-all duration-300 hover:text-gray-800">Гарантия безопасности</p>
+              <p className="transition-all duration-300 hover:text-gray-700">Своевременная и безопасная доставка вашего груза</p>
+            </div>
+            <div className={`border-black rounded-md p-4 max-w-[350px] shadow-md hover:shadow-xl transition-all duration-500 hover:scale-105 hover:bg-blue-50 hover:border-blue-500 ${isVisible ? 'animate-fadeInUp delay-600' : 'opacity-0'}`}>
+              <p className="font-bold text-lg mb-2 transition-all duration-300 hover:text-gray-800">Различные способы оплаты</p>
+              <p className="transition-all duration-300 hover:text-gray-700">Наличный или безналичный расчёт (без НДС)</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="p-5">
-        <div className={`flex flex-col justify-center items-center ${
-          isVisible ? 'animate-fadeInUp delay-600' : 'opacity-0'
-        }`}>
-          <h2 className="text-xl transition-all duration-500 hover:text-gray-800 hover:scale-110">Отзывы клиентов</h2>
+      <section className="mb-[30px]">
+        <div className={`mt-[100px] flex flex-col justify-center items-center ${isVisible ? 'animate-fadeInUp delay-800' : 'opacity-0'}`}>
+          <p className="text-2xl transition-all duration-500 hover:text-gray-800 hover:scale-110">Последние отзывы</p>
           <div className="w-[70%] rounded-2xl h-[2px] bg-black transition-all duration-500 hover:bg-gray-800 hover:h-[4px]"></div>
-          
-          <div className="mt-[60px] w-full max-w-[1098px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div className="p-5 mt-[30px] grid xl:grid-cols-3 min-[850px]:grid-cols-2 max-sm:grid-cols-1 justify-center gap-4">
             {reviews.map((review, index) => (
               <div
                 key={review.id}
-                className={`bg-white border border-gray-200 rounded-lg p-6 shadow-md transition-all duration-500 hover:shadow-2xl hover:scale-105 ${
-                  isVisible ? 'animate-fadeInUp' : 'opacity-0'
-                }`}
-                style={{ animationDelay: `${0.7 + index * 0.1}s` }}
+                className={`border-2 border-black rounded-md max-w-[350px] p-4 shadow-md transition-all duration-500 hover:shadow-2xl hover:scale-105 hover:bg-blue-50 hover:border-blue-500 ${isVisible ? `animate-fadeInUp delay-${(index + 1) * 100}` : 'opacity-0'}`}
               >
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-bold text-lg text-gray-800 transition-all duration-300 hover:text-black">
-                    {review.author}
-                  </h3>
-                  <span className="text-sm text-gray-500">{review.date}</span>
+                <div className="flex justify-between items-center">
+                  <p className="font-bold transition-all duration-300 hover:text-gray-800">{review.author}</p>
+                  <div className="flex">{renderStars(review.rating)}</div>
                 </div>
-                
-                <div className="flex items-center mb-3">
-                  <div className="flex mr-2">{renderStars(review.rating)}</div>
-                  <span className="text-sm text-gray-600">({review.rating}/5)</span>
-                </div>
-                
-                <p className="text-gray-700 mb-4 transition-all duration-300 hover:text-gray-900">
-                  {review.text}
-                </p>
-                
-                <div className="flex flex-col gap-2">
-                  <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full w-fit transition-all duration-300 hover:bg-blue-200">
-                    {review.category}
-                  </span>
-                  <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full w-fit transition-all duration-300 hover:bg-green-200">
-                    {review.status}
-                  </span>
-                </div>
+                <p className="text-sm text-gray-500 transition-all duration-300 hover:text-blue-500">{review.date}</p>
+                <div className="w-full h-[1px] bg-gray-300 my-2 transition-all duration-300 hover:bg-blue-300"></div>
+                <p className="transition-all duration-300 hover:text-gray-700">{review.text}</p>
+                <p className="text-xs text-gray-400 mt-2 transition-all duration-300 hover:text-blue-400">Источник: Авито</p>
               </div>
             ))}
+          </div>
+
+          <div className="flex flex-col gap-4 mt-4 items-center">
+            <Link href="https://www.avito.ru/ryazan/predlozheniya_uslug/gruzoperevozki_4385585661#open-reviews-list">
+              <button className="px-4 py-3 bg-black text-white rounded-lg cursor-pointer transition-all duration-500 hover:bg-gray-800 hover:scale-110 hover:shadow-2xl animate-pulse-custom">
+                Больше отзывов
+              </button>
+            </Link>
           </div>
         </div>
       </section>
